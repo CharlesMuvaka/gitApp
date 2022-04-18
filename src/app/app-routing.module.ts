@@ -1,7 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { UserInputComponent } from './user-input/user-input.component';
 
-const routes: Routes = [];
+import { UserComponent } from './user/user.component';
+
+
+const routes: Routes = [
+  {path:'user/:gitUserName', component:UserComponent},
+  {path:'', component:UserInputComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
