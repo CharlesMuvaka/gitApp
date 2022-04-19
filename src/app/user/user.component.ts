@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute, Router } from '@angular/router';
 import { GetUsersService } from '../get-users.service';
 import { GitUser } from '../git-user';
+import { UserInputComponent } from '../user-input/user-input.component';
 
 @Component({
   selector: 'app-user',
@@ -14,7 +16,7 @@ export class UserComponent implements OnInit {
 
   user:GitUser = new GitUser('','','','','','');
 
-  constructor(private userDetail:GetUsersService, private activeRoute:ActivatedRoute) { 
+  constructor(private userDetail:GetUsersService, private goBack:Router, private activeRoute:ActivatedRoute, private formDialog:MatDialog) { 
    
     
   
@@ -48,6 +50,16 @@ export class UserComponent implements OnInit {
   
 
     
+  }
+
+  goBacked(){
+    this.goBack.navigate(['back']);
+
+  }
+
+  openDialog(){
+    this.formDialog.open(UserInputComponent,{width:'100%', height:'100%'})
+
   }
 
 
