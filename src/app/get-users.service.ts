@@ -17,7 +17,7 @@ export class GetUsersService {
      
   }
 
-  changeUserName(usernamePara){
+  changeUserName(usernamePara:string){
     this.username = usernamePara;
 
   }
