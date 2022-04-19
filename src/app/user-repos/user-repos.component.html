@@ -1,0 +1,26 @@
+<div class="container" >
+
+    
+    <div class="row" >
+        <div class="col-md-3" *ngFor="let repo of userRepos">
+            <div class="card bg-secondary my-2">
+                <h5 [ngStyle]="{'color':'greenyellow'}" class="card-title text-center">{{repo.name}}</h5>
+                <div class="card-body">
+                    <p>{{repo.description}}</p>
+                    
+                </div >
+                <div class="card-footer d-flex justify-content-between">
+                    <p>Created: {{repo.created_at|date}}</p> <a href="{{repo.clone_url}}" target="blank">View Repo</a></div>
+        
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+<div >
+    
+
+
+</div>
