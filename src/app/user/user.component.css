@@ -1,0 +1,24 @@
+img{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+}
+m-0{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.divNav{
+    margin-left: 15px;
+
+}
+p{
+    font-size: 12px;
+}
+nav{
+    height: 90px;
+    margin-top: 10px;
+}
+.navLink:active{
+    color: greenyellow;
+}

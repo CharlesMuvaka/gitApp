@@ -1,0 +1,26 @@
+<div class="container">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <a class="navbar-brand d-flex ms-3">
+            <img src="{{user.gitUserProfileImg}}">
+            <div class="divNav">
+                <p class="m-0" [ngStyle]="{'color':'greenyellow'}">{{user.gitUserName}}</p>
+                <p class="m-0">Joined: <span [ngStyle]="{'color':'greenyellow'}">{{user.dateCreated|date}}</span></p>
+                <p class="m-0">Repositories: <span [ngStyle]="{'color':'greenyellow'}">{{user.userRepos}}</span></p>
+                <p>Last Updated <span [ngStyle]="{'color':'greenyellow'}" >{{user.dateUpdate|date}}</span></p>
+            </div>
+        </a>
+        <button type="button" class="navbar-toggler" data-bs-target="#divNav" data-bs-toggle="collapse" aria-label="toggle navigation" aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="divNav">
+            <ul class="navbar-nav ms-auto me-5">
+                <li><a class="nav-link p-3 active" routerLink="/user" routerLinkActive="active">Repositories</a></li>
+                <li><a class="nav-link p-3" routerLink='/back' routerLinkActive="active">Search User</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <h3 class=" text-center my-3">Below are repositories that beong to <span appColor>{{user.gitUserName}}</span></h3>
+</div>
+
+<app-user-repos [inputPassed]="input"></app-user-repos>
